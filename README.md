@@ -45,7 +45,7 @@
 
 ## Features
 
-List the key features of your project:
+List the key features of your project:1
 - Feature 1: [Description]
 - Feature 2: [Description]
 - Feature 3: [Description]
