@@ -2,54 +2,110 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [TinkCare] 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [Code starters]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [Farha Sherin] - [Jyothi engineering college]
+- Member 2: [Athulya K M] - [Jyothi engineering college]
 
 ### Hosted Project Link
-[mention your project hosted link here]
+[https://tink-her-hack-temp-alpha.vercel.app/chatbot.html]
 
 ### Project Description
-[2-3 lines about what your project does]
+[TinkCare is a smart IoT-based health monitoring system designed for construction site workers in India. It uses wearable sensors to track vital parameters like heart rate, body temperature, dehydration, and fall detection, and sends real-time data to a web app dashboard. The system provides instant alerts to supervisors and includes an AI chatbot, CareBot, to assist workers with health-related guidance and preventive care.]
 
 ### The Problem statement
-[What problem are you solving?]
+[Construction site workers in India are exposed to extreme heat, long working hours, heavy PPE, and physically demanding tasks, which increase the risk of dehydration, heat stress, fatigue, and sudden health emergencies. Currently, there is no real-time health monitoring system to detect early warning signs and prevent accidents. This lack of proactive health tracking leads to unsafe working conditions and delayed medical response on sites.]
 
 ### The Solution
-[How are you solving it?]
+[To address this issue, we propose TinkCare, an IoT-based health monitoring system for construction site workers. The solution includes a wearable sensor device that continuously tracks vital parameters such as heart rate, body temperature, hydration level, and motion (fall detection).
+
+The collected data is transmitted to a web-based dashboard where supervisors can monitor workers in real time, receive abnormal health alerts, and take immediate action. Additionally, the integrated CareBot provides instant health guidance and preventive suggestions, creating a proactive safety ecosystem rather than a reactive response system.]
 
 ---
 
 ## Technical Details
+hardware which is a sensor connected to a web app
 
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [html,css.js.json,md]
+- Frameworks used: [vs code]
+- Libraries used: [dashboard,index.chatbot]
+- Tools used: [open ai]
 
 **For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+- Main components: [Heart Rate & SpO₂ Sensor
+MAX30102,Microcontroller
+ESP32,Body Temperature Sensor,DS18B20 / LM35,Dehydration / Stress Sensor
+GSR (Galvanic Skin Response) Sensor,Motion / Fall Detection Sensor
+MPU6050 (Accelerometer + Gyroscope),Power Supply]
+- Specifications: [1.Microcontroller – ESP32
+	•	Operating Voltage: 3.0V – 3.6V
+	•	Processor: Dual-core 32-bit
+	•	Clock Speed: Up to 240 MHz
+	•	Connectivity: WiFi (802.11 b/g/n) + Bluetooth 4.2
+	•	Low power deep sleep mode supported
+
+2.Heart Rate & SpO₂ Sensor – MAX30102
+	•	Measurement: Heart Rate (30–240 bpm)
+	•	SpO₂ Range: 70% – 100%
+	•	Accuracy: ±2% (SpO₂)
+	•	Low power consumption
+	•	I2C communication
+3. Body Temperature Sensor – DS18B20
+	•	Measurement Range: -55°C to +125°C
+	•	Accuracy: ±0.5°C (between -10°C to 85°C)
+	•	Digital output
+	•	Waterproof variant available 
+
+4. GSR Sensor (Hydration/Stress Monitoring)
+	•	Measures skin conductance
+	•	Operating Voltage: 3.3V – 5V
+	•	Analog output
+	•	Used to detect dehydration & stress levels
+
+5.  Motion Sensor – MPU6050
+	•	3-axis Accelerometer + 3-axis Gyroscope
+	•	Operating Voltage: 3V – 5V
+	•	Detects fall, sudden movement, dizziness
+	•	I2C communication
+
+6. Power System
+	•	3.7V Lithium Polymer Battery
+	•	Capacity: 800mAh – 1200mAh
+	•	Backup: 8–12 hours (one site shift)
+	•	USB rechargeable
+
+7. Physical Design (Proposed)
+	•	Form: Wrist band / Smart band
+	•	Lightweight (<100 grams)
+	•	Sweat-resistant casing
+	•	Comfortable for long working hours]
+- Tools required: []
 
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: [Real-Time Health Monitoring
+
+The wearable device continuously tracks vital parameters such as heart rate, body temperature, hydration level, and motion to detect early signs of fatigue, heat stress, or medical emergencies.]
+- Feature 2: [Instant Alert System
+
+If abnormal health conditions are detected, the system automatically sends alerts to the supervisor through the TinkCare web dashboard, enabling quick response and preventing accidents.]
+- Feature 3: [Centralized Web Dashboard
+
+All worker health data is recorded and displayed in a structured dashboard, allowing supervisors to monitor multiple workers simultaneously and analyze health trends.]
+- Feature 4: [.CareBot – AI Health Assistant
+
+An integrated chatbot that provides immediate health guidance, first-aid suggestions, hydration reminders, and preventive advice based on worker symptoms]
 
 ---
 
@@ -83,14 +139,17 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![<img width="1920" height="1080" alt="Screenshot 2026-02-14 100641" src="https://github.com/user-attachments/assets/9a36c3d5-7cca-4bb9-ae9c-abb0ef4ac058" />
+](Add screenshot 1 here with proper name)
+*home page*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![<img width="1920" height="1080" alt="Screenshot 2026-02-14 100701" src="https://github.com/user-attachments/assets/18bd4f17-469c-4c99-bf0f-10fa5f95c2d6" />
+](Add screenshot 2 here with proper name)
+*carebot*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![<img width="1920" height="1080" alt="Screenshot 2026-02-14 100726" src="https://github.com/user-attachments/assets/ed111297-4950-4cd0-a7d1-f952fdc89b0e" />
+](Add screenshot 3 here with proper name)
+*dashboard*
 
 #### Diagrams
 
@@ -361,7 +420,7 @@ python script.py -v --format json data.json
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+[https://drive.google.com/drive/folders/1TslqoJvIBpKHEVw7FQS_85_eiLsxrJX8?usp=sharing]
 
 *Explain what the video demonstrates - key features, user flow, technical highlights*
 
