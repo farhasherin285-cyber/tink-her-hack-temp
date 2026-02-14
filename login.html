@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Login | TinkCare</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body class="page fade-in center-page">
+
+	<div class="login-card">
+		<div class="login-header">
+			<h1>TinkCare Sign In</h1>
+			<p class="muted">Select a role and sign in. Demo password: <strong>password</strong></p>
+		</div>
+
+		<form id="loginForm">
+			<label>Name</label>
+			<input type="text" id="loginName" placeholder="Your name" required />
+
+			<label>Work Location</label>
+			<input type="text" id="loginSite" placeholder="Where are you working?" required />
+
+			<label>Role</label>
+			<select id="loginRole">
+				<option value="user">User</option>
+				<option value="admin">Admin</option>
+			</select>
+
+			<p id="roleDesc" class="muted" style="margin-top:6px; font-size:13px;"></p>
+
+			<label>Password</label>
+			<input type="password" id="loginPass" placeholder="password" required />
+
+			<div style="display:flex;align-items:center;gap:8px;margin-top:6px;">
+				<input type="checkbox" id="loginRemember">
+				<label for="loginRemember" class="muted">Remember me on this device</label>
+			</div>
+
+			<div class="login-actions">
+				<button class="btn" type="submit">Sign In</button>
+				<a class="btn btn-outline" href="index.html">Cancel</a>
+			</div>
+			<p id="loginError" class="login-error" role="alert" aria-live="assertive"></p>
+		</form>
+	</div>
+
+
+	<script>
+		// small UI helper: update role description
+		(function(){
+			const desc = {
+				user: 'Standard user — access personal dashboard and receive alerts.',
+				admin: 'Administrator — view all sites, manage alerts and notify authorities.'
+			};
+			const sel = document.getElementById('loginRole');
+			const el = document.getElementById('roleDesc');
+			if(sel && el){
+				sel.addEventListener('change', ()=> el.innerText = desc[sel.value] || 'Select a role');
+				el.innerText = desc[sel.value] || '';
+			}
+		})();
+
+		// Enter key navigation for login form
+		(function(){
+			const nameField = document.getElementById('loginName');
+			const siteField = document.getElementById('loginSite');
+			const roleField = document.getElementById('loginRole');
+			const passField = document.getElementById('loginPass');
+			const submitBtn = document.querySelector('#loginForm button[type="submit"]');
+
+			if(nameField) nameField.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); siteField.focus(); } });
+			if(siteField) siteField.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); roleField.focus(); } });
+			if(roleField) roleField.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); passField.focus(); } });
+			if(passField) passField.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); if(submitBtn) submitBtn.click(); } });
+		})();
+	</script>
+
+	<script src="script.js"></script>
+</body>
+</html>

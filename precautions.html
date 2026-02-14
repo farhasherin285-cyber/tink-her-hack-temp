@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Precautions — TinkCare</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body class="page fade-in">
+	<header class="topbar">
+		<div class="brand">TinkCare</div>
+		<nav class="mainnav">
+			<a href="index.html">Home</a>
+			<a href="dashboard.html">Dashboard</a>
+			<a href="chatbot.html">Chatbot</a>
+			<a href="precautions.html" class="active">Precautions</a>
+		</nav>
+	</header>
+
+	<main class="container">
+		<section class="card full">
+			<h2>Health Precautions & Awareness</h2>
+
+			<div class="flex-row" style="align-items:flex-start; gap:20px;">
+				<div style="flex:1;">
+					<label>Select Condition</label>
+					<select id="precSel" style="width:100%; padding:8px;">
+						<option value="">Select Condition</option>
+						<option value="dehydration">Dehydration</option>
+						<option value="heat">Heat Stroke</option>
+						<option value="fatigue">Fatigue</option>
+						<option value="temperature">High Temperature</option>
+					</select>
+
+					<div id="precautionBox" style="margin-top:16px; text-align:left;"></div>
+				</div>
+
+				<aside style="width:260px;">
+					<h4>Quick Tips</h4>
+					<ul>
+						<li>Carry water and electrolytes</li>
+						<li>Take regular shade breaks</li>
+						<li>Wear breathable clothing</li>
+						<li>Monitor workers with alerts</li>
+					</ul>
+					<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='140'><rect rx='8' width='240' height='140' fill='%2360a5fa'/><text x='50%' y='50%' fill='white' font-size='16' text-anchor='middle' dominant-baseline='middle'>Precautions</text></svg>" alt="tips" style="width:100%; margin-top:8px;"/>
+				</aside>
+			</div>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+	<script>
+		const boxes = {
+			dehydration:`<h3>💧 Dehydration</h3><ul><li>Drink water frequently</li><li>Rest in shade</li><li>Use oral rehydration if needed</li></ul>`,
+			heat:`<h3>🔥 Heat Stroke</h3><ul><li>Move to cool place</li><li>Apply cold packs</li><li>Get medical care if severe</li></ul>`,
+			fatigue:`<h3>😴 Fatigue</h3><ul><li>Short rests, hydrate</li><li>Rotate duties</li></ul>`,
+			temperature:`<h3>🌡 High Body Temperature</h3><ul><li>Monitor closely</li><li>If >38°C, rest and seek care</li></ul>`
+		};
+
+		document.getElementById('precSel').addEventListener('change',e=>{
+			const v=e.target.value; document.getElementById('precautionBox').innerHTML=boxes[v]||'';
+		});
+	</script>
+</body>
+</html>

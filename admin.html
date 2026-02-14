@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TinkCare — Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page fade-in">
+  <header class="topbar">
+    <div class="brand">TinkCare Admin</div>
+    <nav class="mainnav">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="chatbot.html">Chatbot</a>
+      <a href="admin.html" class="active">Admin</a>
+    </nav>
+    <div class="actions">
+      <div id="notif" class="notif hidden"></div>
+      <div class="profile">
+        <button id="profileBtn">Profile ▾</button>
+        <div class="profile-dropdown hidden" id="profileDropdown">
+          <div id="profileName">Guest</div>
+          <div class="role" id="profileRole">Role: Visitor</div>
+          <a href="login.html" id="loginLink">Login</a>
+          <a href="#" id="logoutLink" class="hidden">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card full">
+      <h2>Admin Panel</h2>
+      <p class="muted">Only users with role <strong>Admin</strong> can access this page.</p>
+
+      <div id="adminArea">
+        <div class="admin-controls">
+          <button id="refreshUsers" class="btn">Refresh Users</button>
+          <button id="broadcastNotify" class="btn btn-danger">Notify All</button>
+        </div>
+
+        <table class="admin-table" id="usersTable">
+          <thead><tr><th>Name</th><th>Role</th><th>Site</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // admin page initialization
+    function initAdminPage(){
+      const p = readProfile();
+      if(!p.name || p.role !== 'admin'){
+        alert('Admin access required');
+        window.location.href = 'index.html';
+        return;
+      }
+      applyProfileUI();
+      const tbody = document.querySelector('#usersTable tbody');
+      function loadUsers(){
+        tbody.innerHTML = '';
+        const raw = localStorage.getItem('hc_users') || '[]';
+        let users = [];
+        try{ users = JSON.parse(raw); }catch(e){ users = []; }
+        if(users.length===0){
+          // fallback to showing current profile
+          const current = readProfile();
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${current.name || '—'}</td><td>${current.role || '—'}</td><td>${current.site || '—'}</td>`;
+          tbody.appendChild(tr);
+          return;
+        }
+        users.forEach(u=>{
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${u.name}</td><td>${u.role}</td><td>${u.site || '—'}</td>`;
+          tbody.appendChild(tr);
+        });
+      }
+      document.getElementById('refreshUsers').addEventListener('click', loadUsers);
+      document.getElementById('broadcastNotify').addEventListener('click', ()=>{ showNotification('Broadcast: Admin notified all users', true); });
+      loadUsers();
+    }
+
+    window.addEventListener('load', ()=>{ if(document.getElementById('usersTable')) initAdminPage(); });
+  </script>
+</body>
+</html>

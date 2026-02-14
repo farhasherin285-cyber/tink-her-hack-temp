@@ -1,0 +1,249 @@
+/* Reference page container and image styles */
+.reference-container {
+	max-width: 700px;
+	margin: 40px auto;
+	background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+	padding: 2.5rem 2rem 2rem 2rem;
+	font-size: 1.1rem;
+}
+.reference-container h1 {
+	margin-bottom: 1.2rem;
+	color: #1a2233;
+}
+.reference-container section {
+	margin-bottom: 1.5rem;
+}
+.reference-img {
+	display: block;
+	margin: 0.7rem auto 1.2rem auto;
+	border-radius: 12px;
+	max-width: 100%;
+	box-shadow: 0 2px 12px rgba(42,123,228,0.08);
+}
+.back-link {
+	display: inline-block;
+	margin-top: 1.5rem;
+	color: #1a2233;
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.2s;
+}
+.back-link:hover {
+	color: #1a2233;
+	text-decoration: underline;
+}
+
+/* Make dashboard feature cards clickable and add hover effect */
+.feature-link {
+	text-decoration: none;
+	color: #1a2233;
+	transition: box-shadow 0.2s, transform 0.2s;
+}
+.feature-link:hover {
+	box-shadow: 0 6px 32px rgba(42,123,228,0.18);
+	transform: translateY(-2px) scale(1.03);
+}
+:root{
+	--bg1: #f4f8fb; /* soft light background */
+	--bg2: #e3f0ff; /* lighter blue background */
+	--accent1: #4f8cff; /* vibrant blue */
+	--accent2: #2a7be4; /* deep blue */
+	--accent3: #fb7185; /* coral */
+	--card: #ffffff;
+	--muted: #6b7280;
+	--success: #10b981;
+	--danger: #ef4444;
+}
+
+*{box-sizing:border-box}
+body{
+	margin: 0;
+	font-family: 'Segoe UI', Inter, Arial, Helvetica, sans-serif;
+	background: linear-gradient(135deg, var(--bg2) 0%, var(--bg1) 100%);
+	color: #1a2233;
+	-webkit-font-smoothing: antialiased;
+}
+
+.page{min-height:100vh}
+.container{max-width:1100px;margin:28px auto;padding:20px}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 28px;background:linear-gradient(90deg, rgba(255,255,255,0.04), transparent)}
+.brand{font-weight:800;background:none;color:#1a2233;font-size:22px}
+.mainnav a{color:#1a2233;margin:0 10px;text-decoration:none;padding:8px 12px;border-radius:10px;transition:background .18s ease,transform .12s ease}
+.mainnav a:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px)}
+.mainnav a.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
+
+.actions{display:flex;align-items:center;gap:12px}
+.notif{background:linear-gradient(90deg,var(--accent3),var(--danger));color:#fff;padding:8px 12px;border-radius:8px;box-shadow:0 8px 22px rgba(139,92,246,0.12)}
+.hidden{display:none}
+
+/* small shake feedback for login errors */
+.shake{animation:shakeIt .6s ease}
+@keyframes shakeIt{10%,90%{transform:translateX(-1px)}20%,80%{transform:translateX(2px)}30%,50%,70%{transform:translateX(-4px)}40%,60%{transform:translateX(4px)}}
+
+.profile{position:relative}
+.profile button {
+	background: #e3f0ff;
+	color: #1a2233;
+	border: none;
+	padding: 8px 10px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.profile-dropdown {
+	position: absolute;
+	right: 0;
+	top: 44px;
+	background: #fafdff;
+	color: #1a2233;
+	border-radius: 12px;
+	box-shadow: 0 14px 40px rgba(3,10,30,0.12);
+	padding: 14px;
+	width: 220px;
+	border: 1.5px solid #e0e8f7;
+}
+.profile-dropdown a {
+	display: block;
+	color: #1a2233;
+	text-decoration: none;
+	padding: 8px 0;
+	transition: color 0.18s;
+}
+.profile-dropdown a:hover {
+	color: #1a2233;
+}
+.profile-dropdown a:hover {
+	color: #1a2233;
+}
+
+/* weather badge */
+.weather-badge{display:inline-block;padding:6px 10px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;margin-right:8px;box-shadow:0 8px 28px rgba(99,102,241,0.08)}
+.weather-badge.hidden{display:none}
+
+/* settings modal */
+.settings-modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(4,6,12,0.45);z-index:60}
+.settings-panel{width:420px;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 18px 50px rgba(2,6,23,0.12)}
+.settings-panel h3{margin-top:0}
+.settings-row{display:flex;align-items:center;justify-content:space-between;margin:10px 0}
+.settings-row label{flex:1;margin-right:10px}
+.settings-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+.hidden{display:none}
+
+/* small icon button for topbar */
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;border:none;background:rgba(255,255,255,0.04);cursor:pointer;margin-right:8px}
+.icon-btn svg{width:18px;height:18px;fill:linear-gradient(90deg,var(--accent1),var(--accent2));}
+.icon-btn:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px)}
+
+.hero{display:flex;gap:24px;align-items:center;background:transparent}
+.hero-left{flex:1;color:#1a2233}
+.hero-right{width:320px}
+.hero-illustration{width:100%;height:auto}
+
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));color:#1a2233;padding:20px;border-radius:16px;box-shadow:0 12px 40px rgba(2,6,23,0.08);border:1px solid rgba(11,23,56,0.04)}
+.features{display:flex;gap:16px;margin-top:20px}
+.features .card{flex:1}
+/* Updated card style for modern theme */
+.card {
+	background: linear-gradient(120deg, #fafdff 60%, #e3f0ff 100%);
+	color: #1a2233;
+	padding: 24px 20px 20px 20px;
+	border-radius: 18px;
+	box-shadow: 0 4px 24px rgba(42,123,228,0.10);
+	border: 1.5px solid #e0e8f7;
+}
+
+.btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(99,102,241,0.08);transition:transform .12s ease,box-shadow .12s ease}
+.btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(99,102,241,0.12)}
+.btn-outline{background:transparent;color:#1a2233;border:1px solid rgba(6,10,26,0.06)}
+.btn-danger{background:linear-gradient(90deg,var(--accent3),var(--danger));}
+.btn-sm{padding:6px 10px;font-size:13px}
+.btn-danger{background:var(--danger);}
+
+.muted{color:#1a2233}
+
+.grid{display:flex;gap:16px}
+
+.hydration-wrap{display:flex;align-items:center;gap:12px}
+.progress{width:240px;height:18px;background:linear-gradient(90deg, rgba(6,10,26,0.04), rgba(6,10,26,0.02));border-radius:999px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3));width:0%;transition:width 800ms cubic-bezier(.2,.9,.2,1);box-shadow:0 6px 18px rgba(99,102,241,0.06)}
+.hydration-info #dehydPercent{font-weight:700;font-size:18px}
+
+.big-number{font-size:28px;font-weight:700}
+
+.full{margin-top:18px}
+.controls{display:flex;gap:12px;align-items:center;margin-top:12px}
+.status{padding:8px 12px;border-radius:8px}
+.status.safe{background:rgba(16,185,129,0.12);color:var(--success)}
+.status.risk{background:rgba(220,38,38,0.12);color:var(--danger)}
+
+.center-page{display:flex;align-items:center;justify-content:center;height:100vh}
+.login-card{width:420px;background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96));padding:22px;border-radius:14px;box-shadow:0 18px 50px rgba(2,6,23,0.08)}
+.login-card h2{margin-top:0}
+.login-card input,.login-card select{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #e6e9ef}
+/* Updated login-card style for modern theme */
+.login-card {
+	width: 420px;
+	background: linear-gradient(120deg, #fafdff 60%, #e3f0ff 100%);
+	padding: 26px;
+	border-radius: 16px;
+	box-shadow: 0 8px 32px rgba(42,123,228,0.10);
+	border: 1.5px solid #e0e8f7;
+}
+.login-actions{display:flex;gap:8px;align-items:center}
+
+/* login error visuals */
+.login-error{color:var(--danger);font-weight:600;margin-top:8px}
+.input-error{border-color:var(--danger)!important;box-shadow:0 6px 14px rgba(220,38,38,0.08)}
+
+.chat-card{display:grid;grid-template-columns:1fr 300px;gap:20px}
+.chatbox{height:420px;border-radius:12px;border:1px solid rgba(11,23,56,0.04);padding:16px;overflow:auto;background:linear-gradient(180deg, rgba(250,250,252,0.98), rgba(244,246,255,0.96))}
+.chat-controls{display:flex;gap:8px;margin-top:8px}
+.chat-controls input{flex:1;padding:10px;border-radius:10px;border:1px solid #e6e9ef}
+.chat-presets{margin-top:8px}
+.chip{background:linear-gradient(90deg, rgba(99,102,241,0.06), rgba(96,165,250,0.06));border:none;padding:8px 12px;border-radius:999px;margin-right:8px;cursor:pointer}
+
+.footer{margin-top:30px;text-align:center;color:#1a2233}
+
+/* Animated background */
+#animated-bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 10% 20%, rgba(79,209,197,0.18), transparent 10%), radial-gradient(circle at 80% 80%, rgba(96,165,250,0.14), transparent 12%);animation:floatBG 12s linear infinite}
+@keyframes floatBG{0%{transform:translateY(0)}50%{transform:translateY(-20px)}100%{transform:translateY(0)}}
+
+/* Fade transitions */
+.fade-in{animation:fadeInPage .4s ease both}
+@keyframes fadeInPage{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* small screens */
+@media(max-width:900px){.container{padding:12px}.chat-card{grid-template-columns:1fr}.hero{flex-direction:column}.mainnav{display:none}}
+
+/* Chat message styling */
+.message{margin:12px 0;display:block;max-width:78%;padding:12px;border-radius:14px}
+.message.user{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;align-self:flex-end;margin-left:auto;box-shadow:0 8px 30px rgba(6,182,212,0.06)}
+.message.bot{background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98));border:1px solid rgba(11,23,56,0.04);color:rgba(6,10,26,0.9)}
+.message .bot-text{white-space:pre-wrap;line-height:1.45}
+
+/* typing caret for bot messages */
+.bot-caret{display:inline-block;color:var(--muted);font-weight:700;transform:translateY(1px)}
+
+/* message appear animation */
+.message{opacity:0;transform:translateY(6px);transition:opacity .28s ease,transform .28s ease}
+.message.appear{opacity:1;transform:none}
+
+@keyframes caretBlink{0%,100%{opacity:1}50%{opacity:0.05}}
+.bot-caret{animation:caretBlink 900ms steps(1,end) infinite}
+
+.message img{display:block;max-width:240px;margin-top:10px;border-radius:10px}
+
+/* predicted condition styling */
+.prediction-high{color:var(--danger);font-weight:700}
+.prediction-safe{color:var(--success);font-weight:700}
+.prediction-stable{color:var(--muted);font-weight:600}
+
+/* Admin page */
+.admin-table{width:100%;border-collapse:collapse}
+.admin-table th,.admin-table td{padding:8px;border-bottom:1px solid #eef2ff;text-align:left}
+.admin-controls{display:flex;gap:8px;align-items:center}
+
+

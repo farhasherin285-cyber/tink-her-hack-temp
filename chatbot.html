@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>TinkCare — Chatbot</title>
+	<link rel="stylesheet" href="style.css" />
+<script>
+// Expose Gemini API key from .env for browser (not secure, but required for frontend-only app)
+window.GEMINI_API_KEY = "AIzaSyArHKjiIbVBgBvJyhAnmodPkEaceIxKoJ4";
+</script>
+</head>
+<body class="page fade-in">
+
+	<header class="topbar">
+		<div class="brand">TinkCare</div>
+		<nav class="mainnav">
+			<a href="index.html">Home</a>
+			<a href="dashboard.html">Dashboard</a>
+			<a href="chatbot.html" class="active">Chatbot</a>
+		</nav>
+		<div class="actions">
+			<div id="notif" class="notif hidden"></div>
+			<div id="weatherSummary" class="weather-badge hidden" title="Weather"></div>
+			<button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">
+				<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7zm7.4-3a5.9 5.9 0 0 0-.1-1l2-1.5-2-3.5-2.3.6a6 6 0 0 0-1.6-.9L14 2H10l-.4 4.2c-.6.2-1.1.5-1.6.9L5.7 6.5 3.7 10l2 1.5c0 .3-.1.7-.1 1s0 .7.1 1l-2 1.5L5.7 18l2.3-.6c.5.4 1 .7 1.6.9L10 22h4l.4-4.2c.6-.2 1.1-.5 1.6-.9l2.3.6 2-3.5-2-1.5z"/></svg>
+			</button>
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="chat-card card full">
+			<h2>CareBot — Your quick health assistant</h2>
+			<p class="muted">CareBot gives fast, evidence-informed first-aid steps, personalised precautions, and clear guidance on when to seek medical care. It helps with symptoms, injury first-aid, illness prevention, and workplace health advice. Not a substitute for professional medical assessment.</p>
+			<div class="chat-area">
+				<div id="chatbox" class="chatbox"></div>
+
+				<div class="chat-controls">
+					<input id="question" placeholder="Describe symptoms or ask for first-aid, prevention tips, or when to seek care..." />
+					<button id="sendBtn" class="btn">Send</button>
+				</div>
+				<div class="chat-presets">
+					<button class="chip">Severe chest pain</button>
+					<button class="chip">Breathing difficulty</button>
+					<button class="chip">High fever — what to do?</button>
+				</div>
+			</div>
+			<aside class="chat-reference">
+				<h4>Reference</h4>
+				<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+					<img src="https://picsum.photos/seed/hydration/320/200" alt="hydration" />
+					<img src="https://picsum.photos/seed/firstaid/320/200" alt="first-aid" />
+					<img src="https://picsum.photos/seed/weather/320/200" alt="weather" />
+					<img src="https://picsum.photos/seed/injury/320/200" alt="injury" />
+				</div>
+				<p class="muted">Quick visual guides: hydration, first aid, weather precautions and injury response — open full precautions for detailed steps.</p>
+				<a class="btn btn-outline" href="precautions.html">Full Precautions</a>
+			</aside>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+	<script>
+		window.addEventListener('load',()=>{ initChatbotUI(); });
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hydration Monitor — Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="page fade-in">
+    <header class="topbar">
+        <div class="brand">TinkCare</div>
+        <nav class="mainnav">
+            <a href="index.html" class="active">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="chatbot.html">Chatbot</a>
+            <a href="precautions.html">Precautions</a>
+        </nav>
+        <div class="actions">
+            <div id="notif" class="notif hidden"></div>
+            <div id="weatherSummary" class="weather-badge hidden" title="Weather"></div>
+            <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7zm7.4-3a5.9 5.9 0 0 0-.1-1l2-1.5-2-3.5-2.3.6a6 6 0 0 0-1.6-.9L14 2H10l-.4 4.2c-.6.2-1.1.5-1.6.9L5.7 6.5 3.7 10l2 1.5c0 .3-.1.7-.1 1s0 .7.1 1l-2 1.5L5.7 18l2.3-.6c.5.4 1 .7 1.6.9L10 22h4l.4-4.2c.6-.2 1.1-.5 1.6-.9l2.3.6 2-3.5-2-1.5z"/></svg>
+            </button>
+            <div class="profile" id="profileMenu">
+                <button id="profileBtn">Profile ▾</button>
+                <div class="profile-dropdown hidden" id="profileDropdown">
+                    <div id="profileName">Guest</div>
+                    <div class="role" id="profileRole">Role: Visitor</div>
+                    <a href="login.html" id="loginLink">Login</a>
+                    <a href="#" id="logoutLink" class="hidden">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-left">
+                <h1>Smart Dehydration & Health Monitor</h1>
+                <p>Realtime sensor readings, alerts and AI health assistant — simple, colourful and mobile friendly.</p>
+                <div class="home-actions">
+                    <a class="btn" href="dashboard.html">View Dashboard</a>
+                    <a class="btn btn-outline" href="chatbot.html">Ask CareBot</a>
+                    <a class="btn btn-outline" href="#" id="weatherBtn">Check Weather</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <svg viewBox="0 0 200 200" class="hero-illustration">
+                    <defs>
+                        <linearGradient id="g" x1="0" x2="1">
+                            <stop offset="0" stop-color="#4fd1c5" />
+                            <stop offset="1" stop-color="#60a5fa" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="10" y="20" width="180" height="160" rx="12" fill="url(#g)" />
+                    <circle cx="60" cy="90" r="18" fill="#fff" opacity="0.18" />
+                </svg>
+            </div>
+        </section>
+
+        <section class="features">
+            <a class="card feature-link" href="realtime.html">
+                <h3>Realtime Dehydration</h3>
+                <p>Track your hydration status with animated progress bars, live sensor updates, and instant alerts when dehydration risk is detected. Learn how the system works, see real-world examples, and get visual guides for healthy hydration.</p>
+            </a>
+            <a class="card feature-link" href="assistant.html">
+                <h3>AI Health Assistant</h3>
+                <p>CareBot answers your health questions, provides first-aid steps, and offers prevention tips for a wide range of symptoms and emergencies. Explore detailed use cases, reference images, and best practices for using AI in health monitoring.</p>
+            </a>
+            <a class="card feature-link" href="notifications.html">
+                <h3>Notifications</h3>
+                <p>Get notified only when your health is at risk. Learn how smart alerts work, when authorities are notified, and see illustrated scenarios of emergency response and escalation. Includes visual guides for workplace safety and compliance.</p>
+            </a>
+        </section>
+
+        <footer class="footer">© 2026 TinkCare — Stay hydrated</footer>
+    </main>
+
+    <div id="animated-bg" aria-hidden="true"></div>
+    <script src="script.js"></script>
+</body>
+</html>

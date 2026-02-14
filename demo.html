@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TinkCare Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page center-page">
+  <div class="login-card">
+    <h2>Demo: simulate readings</h2>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <label>Dehydration %</label>
+      <input id="demoVal" type="number" value="50" min="0" max="100" style="width:90px;padding:8px;border-radius:8px;border:1px solid #e6e9ef" />
+      <button id="demoPush" class="btn">Push Reading</button>
+      <button id="demoHigh" class="btn btn-outline">High (90%)</button>
+    </div>
+    <p class="muted">This page calls the same UI functions used by the dashboard to help testing notification and weather behavior.</p>
+    <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+      <a href="dashboard.html" class="btn btn-outline">Open Dashboard</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('demoPush').addEventListener('click', ()=>{
+      const v = Number(document.getElementById('demoVal').value) || 0;
+      updateDashboardUI({dehydration: v, temp: 36 + Math.random()*2, timestamp: Date.now()});
+    });
+    document.getElementById('demoHigh').addEventListener('click', ()=>{
+      updateDashboardUI({dehydration:90, temp: 39, timestamp: Date.now()});
+    });
+  </script>
+</body>
+</html>
